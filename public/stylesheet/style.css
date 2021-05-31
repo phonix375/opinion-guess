@@ -61,11 +61,12 @@ outline:none;
 
 .game-btn:hover{
   color: #c3e5f0;
-  text-shadow: 0px 0px 20px #00c3ff91
+  text-shadow: 0px 0px 20px #00c3ff91;
+  cursor: pointer;
 }
 
 .form-title{
   font-family: NEON;
   color: #c3e5f0;
-  text-shadow: 0px 0px 20px #00c3ff91
+  text-shadow: 0px 0px 20px #00c3ff91;
 }
