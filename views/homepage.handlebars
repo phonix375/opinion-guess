@@ -18,7 +18,7 @@
 </button>
  --}}
 
-<!-- Modal -->
+<!-- Modal login-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -39,9 +39,48 @@
     <input type="password" class="form-control" id="password">
   </div>
   <a id="loginSubmit" class="game-btn">GO</a>
+  <div class="mb-3">
+    <a class="createAccount" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Don't have an account ?</a>
+  </div>
 </form>
       </div>
     </div>
   </div>
 </div>
-<script src="/javascript/homepage.js"></script>
+
+{{!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1"> --}}
+
+
+<!-- Modal register-->
+<div class="modal fade" id="exampleModalToggle2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body rounded">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+<form id="rgisterForm">
+  <div>
+  <h3 class="form-title">Register</h3>
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="registerPassword">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Username</label>
+    <input type="text" class="form-control" id="registerUsername">
+  </div>
+  <a id="loginSubmit" class="game-btn">GO</a>
+  <div class="mb-3">
+    <a class="createAccount" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-dismiss="modal">Have an account?</a>
+  </div>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
