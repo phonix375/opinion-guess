@@ -1,0 +1,26 @@
+body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("/images/bg.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .modal-header, .modal-body{
+    background-image: url("/images/bg.jpg");
+    color: #00a8ff;
+    text-shadow: 2px 2px 5px  #00a8ff;
+  }
+.navbar{
+    color: #00a8ff;
+    text-shadow: 2px 2px 5px  #00a8ff;
+}
