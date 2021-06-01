@@ -21,8 +21,29 @@ async function submitLoginForm(event){
     }
     console.log(email,password);
 }
+async function submitregisterForm(event){
+    event.preventDefault();
 
+    const email = document.querySelector('#registerEmail').value.trim();
+    const password = document.querySelector('#registerPassword').value.trim();
+    const username = document.querySelector('#registerUsername').value.trim();
+    if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))){
+        alert('please enter a valid Email address');
+        return;
+    }
+    if(!password){
+        alert('Please enter a password');
+        return;
+    }
+    if(!username){
+        alert('please enter a username');
+        return;
+    }
+    location.reload();
+    console.log(email,password, username);
+}
 
 document.querySelector('#joinGame').addEventListener('click', joinGameHandler);
 document.querySelector('#newGame').addEventListener('click', newGameHandler);
 document.querySelector('#loginSubmit').addEventListener('click', submitLoginForm);
+document.querySelector('#registerSubmit').addEventListener('click', submitregisterForm);
