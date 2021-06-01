@@ -39,7 +39,22 @@ async function submitregisterForm(event){
         alert('please enter a username');
         return;
     }
-    location.reload();
+
+    const response = await fetch('/api/user', {
+        method: 'post',
+        body: JSON.stringify({
+            email,
+            password,
+            username
+        }),
+        headers:{ 'Content-Type': 'application/json' }
+    });
+
+    if(response.ok){
+        document.location.reload()
+    }else{
+        alert(response.statusText);
+    }
     console.log(email,password, username);
 }
 
