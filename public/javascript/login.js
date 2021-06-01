@@ -26,7 +26,7 @@ async function submitLoginForm(event){
     if(response.ok){
         document.location.reload()
     }else{
-        alert(response.statusText);
+        alert('Somthing went wrong, Please try again');
     }
 }
 async function submitregisterForm(event){

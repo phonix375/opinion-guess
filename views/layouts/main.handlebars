@@ -26,19 +26,25 @@
         </li>
         {{#if loggedIn}}
         <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGOUT</a>
+          <a class="nav-link" id="logout">LOGOUT</a>
         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link" href="/login" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+          <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
         </li>
           {{/if}}
       </ul>
+
     </div>
   </div>
+  {{#if username}}
+      <div class="d-flex">
+        Welcome back {{username}}
+      </div>
+      {{/if}}
 </nav>
     <main>
-      {{{ body }}}
+      <b>{{{ body }}}</b>
     </main>
     <!-- Button trigger modal -->
 

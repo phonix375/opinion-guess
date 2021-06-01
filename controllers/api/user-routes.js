@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     res.json({message:'this is working !'})
   });
 
-  router.post('/',async (req,res)=>{
+router.post('/',async (req,res)=>{
     newpassword = await hashing(req.body.password)
     User.create({
       username:req.body.username,
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
   })
   
 
-  router.post('/login', (req, res) => {
+router.post('/login', (req, res) => {
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
       where: {
@@ -62,9 +62,6 @@ router.get('/', (req, res) => {
       });
     });
   });
-
-
-
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {

@@ -8,7 +8,7 @@
         <span class="game-btn" id="joinGame">JOIN</span>
       </div>
         <div>
-          <span class="game-btn" id="newGame">NEW GAME</span>
+          <span class="game-btn" id="newGame" data-bs-toggle="modal" data-bs-target="#newGameModal">NEW GAME</span>
       </div>
     </div>
   </div>
@@ -85,4 +85,34 @@
   </div>
 </div>
 
+
+<!-- Modal new game-->
+<div class="modal fade" id="newGameModal" tabindex="-1" aria-labelledby="newGameModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body rounded">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+<form id="newGame">
+  <div>
+  <h3 class="form-title">Start New Game</h3>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">How many players?</label>
+    <input type="number" class="form-control" id="players" aria-describedby="emailHelp">
+  </div>
+  <a id="play-btn" class="game-btn">PLAY</a>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{else}}
+<script src="/javascript/login.js"></script>
+{{/if}}
 <script src="/javascript/homepage.js"></script>
