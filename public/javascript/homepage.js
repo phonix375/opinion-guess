@@ -19,7 +19,7 @@ function PlayPressHandeler(event){
     document.location.replace(`/game/${players}`);
 }
 
-
+const socket = io();
 document.querySelector('#joinGame').addEventListener('click', joinGameHandler);
 document.querySelector('#play-btn').addEventListener('click', PlayPressHandeler);
 
