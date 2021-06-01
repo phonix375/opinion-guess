@@ -9,4 +9,5 @@ router.get('/', (req,res) =>{
     console.log(username)
     res.render('homepage', {loggedIn: req.session.loggedIn, username:username})
 })
+
 module.exports = router;
