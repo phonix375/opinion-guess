@@ -53,9 +53,18 @@ app.use(require('./controllers/'));
 io.on('connection', (socket) => {
   console.log('new connection');
 
-  socket.on('answer', (blabla) =>{
-   console.log('FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO');
-   console.log(blabla);
+  socket.on('answer', (answerData) =>{
+    //sending {game:game,answer:answer,nickname:nick }
+    ongoingGames[answerData.game].submittedAnswers ++;
+    console.log('subbmited answers ', ongoingGames[answerData.game].submittedAnswers)
+    console.log('players ', ongoingGames[answerData.game].players)
+    if(ongoingGames[answerData.game].submittedAnswers == ongoingGames[answerData.game].players){
+      ongoingGames[answerData.game].question.shift();
+      ongoingGames[answerData.game].submittedAnswers = 0;
+      io.emit(answerData.game, {action:'nextQuestion', question:ongoingGames[answerData.game].question[0].question});
+    }
+   console.log(ongoingGames[answerData.game])
+   console.log(answerData);
   });
 
   socket.on('startGame', (gameObject) =>{

@@ -40,6 +40,7 @@
     var socket = io();
     document.onload = joinedGame({{game}});
     socket.on('{{game}}', function(obj){
+      console.log('recived a new transmition');
         play(obj);
     });
 </script>

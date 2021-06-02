@@ -35,6 +35,11 @@ function play(obj){
             submitAnswer();
         })
     }
+    if(obj.action == 'nextQuestion'){
+        document.querySelector('.myAnswer').disabled = false;
+    document.querySelector('.answerSubmit').disabled = false;
+    document.querySelector('.card-header').innerText = obj.question;
+    }
 }
 
 function saveNickName(){
