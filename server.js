@@ -4,8 +4,10 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const http = require('http');
+const { Question } = require('./models');
 
 let panndingGames = {}
+let ongoingGames = {}
 
 
 
@@ -49,14 +51,41 @@ app.use(require('./controllers/'));
 
 //soket io listener
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    console.log('message: ' + msg);
-  });
+  console.log('new connection');
+
+
+
   socket.on('startGame', (gameObject) =>{
-    panndingGames[gameObject.uuid] = {players:gameObject.players}
+    panndingGames[gameObject.uuid] = {players:gameObject.players,loggedin: 0}
     console.log(panndingGames)
-  })
+  });
+
+
+  socket.on('joinGame', (game) =>{
+    if(panndingGames[game] && panndingGames[game].loggedin <= panndingGames[game].players){
+      panndingGames[game].loggedin ++
+      if(panndingGames[game].loggedin === panndingGames[game].players){
+        Question.findAll({
+        })
+        .then(dbQuestionData => {
+          const questions = dbQuestionData.map(question => question.get({ plain: true }));
+          ongoingGames[game] = JSON.parse(JSON.stringify(panndingGames[game]));
+          ongoingGames[game].question = questions;
+          delete panndingGames[game];
+          console.log(panndingGames)
+          console.log(ongoingGames)
+          io.emit(game, {action:'newQuestion'});
+        });
+        
+      }
+    }
+    console.log(panndingGames)
+  });
 });
+
+
+
+
 
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({force:false}).then(()=>{

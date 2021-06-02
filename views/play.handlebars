@@ -4,14 +4,19 @@
     <div class="card">
   <h5 class="card-header">Waiting for other player to join</h5>
   <div class="card-body">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://localhost:3001/game/play/{{uuid}}" alt="">
-    <a href="{{url}}">or click here</a>
+      wellcom to game number {{game}}
   </div>
 </div>
   </div>
 
 </div>
+
+
 <script src="/javascript/play.js"></script>
 <script>
-document.onload = joinedGame({{uuid}},{{players}});
+    var socket = io();
+    document.onload = joinedGame({{game}});
+    socket.on('{{game}}', function(obj){
+        play(obj);
+    });
 </script>

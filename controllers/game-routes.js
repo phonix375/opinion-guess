@@ -18,8 +18,6 @@ router.get('/:number', (req,res) =>{
 
 router.get('/play/:number', (req,res) =>{
 
-    res.send('hellow plya')
-    
-    // res.render('play',  {loggedIn: req.session.loggedIn, username:username ,uuid: uuid, players:req.params.number } )
+    res.render('play',  {loggedIn: req.session.loggedIn, game: req.params.number} )
 })
 module.exports = router;

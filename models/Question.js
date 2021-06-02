@@ -1,40 +1,44 @@
+//import models 
 const { Model, DataTypes } = require('sequelize');
+//db connection
 const sequelize = require('../config/connection');
 
-
-// question model
 class Question extends Model {}
 
-
-// create fields/columns for question model
 Question.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
+        id:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+            primaryKey:true,
+            autoIncrement:true,
+            validate:{
+                notEmpty:true
+            }
         },
-        question: {
-            type: DataTypes.STRING,
-            allowNull: false
+        question:{
+            type:DataTypes.TEXT,
+            allowNull:false,
         },
-        answer: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        answers:{
+            type:DataTypes.TEXT,
+            allowNull:false,
+
         },
-        answer_score: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+        scores:{
+            type:DataTypes.TEXT,
+            allowNull:false,
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'question'
+        modelName: 'question',
+          
     }
-);
-
+)
 
 module.exports = Question;
+
