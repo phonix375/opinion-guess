@@ -88,8 +88,6 @@ io.on('connection', (socket) => {
 
 
 
-
-
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({force:false}).then(()=>{
   server.listen(PORT, () => {
