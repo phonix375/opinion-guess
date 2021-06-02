@@ -64,19 +64,18 @@ io.on('connection', (socket) => {
   socket.on('joinGame', (game) =>{
     if(panndingGames[game] && panndingGames[game].loggedin <= panndingGames[game].players){
       panndingGames[game].loggedin ++
+      console.log(panndingGames[game]);
       if(panndingGames[game].loggedin === panndingGames[game].players){
         Question.findAll({
         })
         .then(dbQuestionData => {
           const questions = dbQuestionData.map(question => question.get({ plain: true }));
           console.log(questions[0]);
-          console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!')
           ongoingGames[game] = JSON.parse(JSON.stringify(panndingGames[game]));
           ongoingGames[game].question = questions;
+          ongoingGames[game].submittedAnswers = 0
           delete panndingGames[game];
-          console.log(panndingGames)
-          console.log(ongoingGames)
-          console.log('#############################################')
+
           console.log(ongoingGames[game].question[0])
           io.emit(game, {action:'startGame', question:ongoingGames[game].question[0].question});
         });

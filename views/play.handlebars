@@ -12,6 +12,30 @@
 </div>
 
 
+<!-- Modal new game-->
+<div class="modal fade" id="nickName" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body rounded">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+<form id="nickNameForm">
+  <div>
+  <h3 class="form-title">Join a Game</h3>
+  </div>
+  <div class="mb-3">
+    <label for="nick" class="form-label">how should we call you ?</label>
+    <input type="text" class="form-control" id="nick" aria-describedby="emailHelp">
+  </div>
+  <a id="addNickName" class="game-btn" >PLAY</a>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <script src="/javascript/play.js"></script>
 <script>
     var socket = io();
