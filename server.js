@@ -56,28 +56,29 @@ io.on('connection', (socket) => {
 
 
   socket.on('startGame', (gameObject) =>{
-    panndingGames[gameObject.uuid] = {players:gameObject.players,loggedin: 0}
+    panndingGames[gameObject.uuid] = {players:gameObject.players,loggedin: 0,playersObj: {}}
     console.log(panndingGames)
   });
 
 
-  socket.on('joinGame', (game) =>{
-    if(panndingGames[game] && panndingGames[game].loggedin <= panndingGames[game].players){
-      panndingGames[game].loggedin ++
-      console.log(panndingGames[game]);
-      if(panndingGames[game].loggedin === panndingGames[game].players){
+  socket.on('joinGame', (obj) =>{
+    if(panndingGames[obj.game] && panndingGames[obj.game].loggedin <= panndingGames[obj.game].players){
+      panndingGames[obj.game].loggedin ++
+      panndingGames[obj.game].playersObj[obj.nick] = {score:0}
+      console.log(panndingGames[obj.game]);
+      if(panndingGames[obj.game].loggedin === panndingGames[obj.game].players){
         Question.findAll({
         })
         .then(dbQuestionData => {
           const questions = dbQuestionData.map(question => question.get({ plain: true }));
           console.log(questions[0]);
-          ongoingGames[game] = JSON.parse(JSON.stringify(panndingGames[game]));
-          ongoingGames[game].question = questions;
-          ongoingGames[game].submittedAnswers = 0
-          delete panndingGames[game];
+          ongoingGames[obj.game] = JSON.parse(JSON.stringify(panndingGames[obj.game]));
+          ongoingGames[obj.game].question = questions;
+          ongoingGames[obj.game].submittedAnswers = 0
+          delete panndingGames[obj.game];
 
-          console.log(ongoingGames[game].question[0])
-          io.emit(game, {action:'startGame', question:ongoingGames[game].question[0].question});
+          console.log(ongoingGames[obj.game].question[0])
+          io.emit(obj.game, {action:'startGame', question:ongoingGames[obj.game].question[0].question});
         });
         
       }

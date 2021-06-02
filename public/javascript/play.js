@@ -1,9 +1,6 @@
 function joinedGame(game){
-  
 
     myModal.show();
-    
-    socket.emit('joinGame', game);
 }
 
 function submitAnswer(){
@@ -43,6 +40,11 @@ function saveNickName(){
     window.localStorage.setItem('nickname', nick);
 
     console.log(nick);
+    let game = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ].replaceAll('?','');
+      console.log(game)
+    socket.emit('joinGame', {game:game, nick:nick});
     return;
 }
 
