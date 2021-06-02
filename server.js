@@ -69,17 +69,20 @@ io.on('connection', (socket) => {
         })
         .then(dbQuestionData => {
           const questions = dbQuestionData.map(question => question.get({ plain: true }));
+          console.log(questions[0]);
+          console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!')
           ongoingGames[game] = JSON.parse(JSON.stringify(panndingGames[game]));
           ongoingGames[game].question = questions;
           delete panndingGames[game];
           console.log(panndingGames)
           console.log(ongoingGames)
-          io.emit(game, {action:'newQuestion'});
+          console.log('#############################################')
+          console.log(ongoingGames[game].question[0])
+          io.emit(game, {action:'startGame', question:ongoingGames[game].question[0].question});
         });
         
       }
     }
-    console.log(panndingGames)
   });
 });
 
