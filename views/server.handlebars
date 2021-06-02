@@ -1,0 +1,17 @@
+
+<div class="container-Fluid">
+  <div class="col-12 d-flex justify-content-center">
+    <div class="card">
+  <h5 class="card-header">Waiting for other player to join</h5>
+  <div class="card-body">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://localhost:3001/game/play/{{uuid}}" alt="">
+    <a href="https://localhost:3001/game/play/{{uuid}}">or click here</a>
+  </div>
+</div>
+  </div>
+
+</div>
+<script src="/javascript/server.js"></script>
+<script>
+document.onload = createGame({{uuid}},{{players}});
+</script>

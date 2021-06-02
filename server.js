@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const http = require('http');
 
+let panndingGames = {}
+
 
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -28,6 +30,7 @@ const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
+app.io = io;
 
 
 
@@ -49,6 +52,10 @@ io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     console.log('message: ' + msg);
   });
+  socket.on('startGame', (gameObject) =>{
+    panndingGames[gameObject.uuid] = {players:gameObject.players}
+    console.log(panndingGames)
+  })
 });
 
 // sync sequelize models to the database, then turn on the server
