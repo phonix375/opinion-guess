@@ -53,7 +53,10 @@ app.use(require('./controllers/'));
 io.on('connection', (socket) => {
   console.log('new connection');
 
-
+  socket.on('answer', (blabla) =>{
+   console.log('FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO');
+   console.log(blabla);
+  });
 
   socket.on('startGame', (gameObject) =>{
     panndingGames[gameObject.uuid] = {players:gameObject.players,loggedin: 0,playersObj: {}}

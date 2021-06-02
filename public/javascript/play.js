@@ -6,6 +6,14 @@ function joinedGame(game){
 function submitAnswer(){
     let answer = document.querySelector('.myAnswer').value.trim()
     console.log("your answer is " , answer);
+    let game = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ].replaceAll('?','');
+      let nick = localStorage.getItem('nickname')
+    socket.emit('answer',{game:game,answer:answer,nickname:nick });
+    document.querySelector('.myAnswer').disabled = true;
+    document.querySelector('.answerSubmit').disabled = true;
+    document.querySelector('.card-header').innerText = 'Waiting for other player to answer';
 }
 
 function play(obj){
@@ -38,6 +46,7 @@ function saveNickName(){
     }
     var myModal = new bootstrap.Modal(document.getElementById("nickName"), {});
     window.localStorage.setItem('nickname', nick);
+
 
     console.log(nick);
     let game = window.location.toString().split('/')[
