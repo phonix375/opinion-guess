@@ -18,7 +18,6 @@ function submitAnswer(){
 
 function play(obj){
     if(obj.action == 'startGame'){
-        alert('starting the game');
         document.querySelector('.card-header').innerHTML = obj.question;
         let form = document.createElement('form');
         let input = document.createElement('input');
@@ -37,6 +36,7 @@ function play(obj){
     }
     if(obj.action == 'nextQuestion'){
         document.querySelector('.myAnswer').disabled = false;
+        document.querySelector('.myAnswer').value = '';
     document.querySelector('.answerSubmit').disabled = false;
     document.querySelector('.card-header').innerText = obj.question;
     }

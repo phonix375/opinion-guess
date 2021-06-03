@@ -5,7 +5,7 @@
     </div>
     <div class="col">
       <div>
-        <span class="game-btn" id="joinGame">JOIN</span>
+         <span class="game-btn" id="joinGame" data-bs-toggle="modal" data-bs-target="#joinGameModal">JOIN</span>
       </div>
         <div>
           <span class="game-btn" id="newGame" data-bs-toggle="modal" data-bs-target="#newGameModal">NEW GAME</span>
@@ -102,6 +102,29 @@
     <input type="number" class="form-control" id="players" aria-describedby="emailHelp">
   </div>
   <a id="play-btn" class="game-btn">PLAY</a>
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal join game-->
+<div class="modal fade" id="joinGameModal" tabindex="-1" aria-labelledby="newGameModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body rounded">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+<form id="newGame">
+  <div>
+  <h3 class="form-title">Join an existing game</h3>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">what is the game number</label>
+    <input type="number" class="form-control" id="gameNumber" aria-describedby="emailHelp">
+  </div>
+  <a id="join-btn" class="game-btn">JOIN</a>
 </form>
       </div>
     </div>
