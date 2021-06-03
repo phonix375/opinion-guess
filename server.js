@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const http = require('http');
 const { Question } = require('./models');
+var stringSimilarity = require("string-similarity");
+
 
 let panndingGames = {}
 let ongoingGames = {}
@@ -58,6 +60,16 @@ io.on('connection', (socket) => {
     ongoingGames[answerData.game].submittedAnswers ++;
     console.log('subbmited answers ', ongoingGames[answerData.game].submittedAnswers)
     console.log('players ', ongoingGames[answerData.game].players)
+
+    for(i = 0; i < JSON.parse(ongoingGames[answerData.game].question[0].answers).length - 1; i++){
+
+      let similar = stringSimilarity.compareTwoStrings(answerData.answer.toLowerCase(), JSON.parse(ongoingGames[answerData.game].question[0].answers)[i].toLowerCase());
+      console.log('similar', similar);
+      if(similar > 0.4 ){
+        ongoingGames[answerData.game].playersObj[answerData.nickname].score += parseInt(JSON.parse(ongoingGames[answerData.game].question[0].scores)[i]);
+        break;
+      }
+    }
     if(ongoingGames[answerData.game].submittedAnswers == ongoingGames[answerData.game].players){
       ongoingGames[answerData.game].question.shift();
       ongoingGames[answerData.game].submittedAnswers = 0;
