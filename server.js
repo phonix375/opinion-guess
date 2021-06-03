@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
 
       let similar = stringSimilarity.compareTwoStrings(answerData.answer.toLowerCase(), JSON.parse(ongoingGames[answerData.game].question[0].answers)[i].toLowerCase());
       console.log('similar', similar);
-      if(similar > 0.4 ){
+      if(similar > 0.6 ){
         ongoingGames[answerData.game].playersObj[answerData.nickname].score += parseInt(JSON.parse(ongoingGames[answerData.game].question[0].scores)[i]);
         break;
       }
@@ -73,7 +73,11 @@ io.on('connection', (socket) => {
     if(ongoingGames[answerData.game].submittedAnswers == ongoingGames[answerData.game].players){
       ongoingGames[answerData.game].question.shift();
       ongoingGames[answerData.game].submittedAnswers = 0;
-      io.emit(answerData.game, {action:'nextQuestion', question:ongoingGames[answerData.game].question[0].question});
+      if(ongoingGames[answerData.game].question.length == 0){
+        io.emit(answerData.game, {action:'endGame',score:ongoingGames[answerData.game].playersObj });
+      }else{
+        io.emit(answerData.game, {action:'nextQuestion', question:ongoingGames[answerData.game].question[0].question});
+      }
     }
    console.log(ongoingGames[answerData.game])
    console.log(answerData);

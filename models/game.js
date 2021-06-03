@@ -16,22 +16,10 @@ Game.init(
                 notEmpty:true
             }
         },
-        players:{
-            type:DataTypes.INTEGER,
-            allowNull:false,
-            unique:false,
-        },
-        done:{
-            type:DataTypes.BOOLEAN,
-            allowNull:false,
-            defaultValue: false
-
-        },
         score:{
-            type:DataTypes.STRING,
+            type:DataTypes.TEXT,
             allowNull:true,
             defaultValue: ''
-
         }
     },
     {

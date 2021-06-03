@@ -40,6 +40,19 @@ function play(obj){
     document.querySelector('.answerSubmit').disabled = false;
     document.querySelector('.card-header').innerText = obj.question;
     }
+    if(obj.action ==  'endGame'){
+        document.querySelector('.card-header').innerText = 'The Game is over';
+        document.querySelector('.card-body').innerHTML = '';
+        console.log(obj.score);
+        let list = document.createElement('ul');
+        for (const [key, value] of Object.entries(obj.score)) {
+            let listItem = document.createElement('li');
+            listItem.innerText = key + " : " + value.score;
+            list.appendChild(listItem);
+          }
+          document.querySelector('.card-body').appendChild(list);
+
+    }
 }
 
 function saveNickName(){
