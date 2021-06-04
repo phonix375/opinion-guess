@@ -3,7 +3,7 @@
     <div class="card">
   <h5 class="card-header">Waiting for other player to join</h5>
   <div class="card-body">
-      wellcom to game number {{game}}
+       Welcome to game number {{game}}
   </div>
 </div>
   </div>
@@ -23,7 +23,7 @@
   <h3 class="form-title">Join a Game</h3>
   </div>
   <div class="mb-3">
-    <label for="nick" class="form-label">how should we call you ?</label>
+    <label for="nick" class="form-label">What nickname would you like to use?</label>
     <input type="text" class="form-control" id="nick" aria-describedby="emailHelp">
   </div>
   <a id="addNickName" class="game-btn" >PLAY</a>
@@ -33,14 +33,33 @@
   </div>
 </div>
 
+<!--- Game layout --->
+<div class="card">
+  <h1>Welcome to "Guess The Opinion!</h1>
+</div>
+<div clas="card">
+  <h2>For every question, give your best guess on the most popular answer!</h2>
+</div>
+<!-- Question Display --->
+<div>
 
+</div>
+
+<!-- Submit Answer -->
+<div>
+  <form>
+    <label class="form-label">Give your best guess!</label>
+    <input type="text" class="form-control" id="answer" aria-describedby=" ">
+  </form>
+  <a id="submitAnswer" class="game-btn">Guess!</a>
+</div>
 
 <script src="/javascript/play.js"></script>
 <script>
     var socket = io();
     document.onload = joinedGame({{game}});
     socket.on('{{game}}', function(obj){
-      console.log('recived a new transmition');
+      console.log('received a new transmission');
         play(obj);
     });
 </script>

@@ -5,7 +5,7 @@ function joinedGame(game){
 
 function submitAnswer(){
     let answer = document.querySelector('.myAnswer').value.trim()
-    console.log("your answer is " , answer);
+    console.log("Your answer is " , answer);
     let game = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ].replaceAll('?','');
@@ -13,12 +13,12 @@ function submitAnswer(){
     socket.emit('answer',{game:game,answer:answer,nickname:nick });
     document.querySelector('.myAnswer').disabled = true;
     document.querySelector('.answerSubmit').disabled = true;
-    document.querySelector('.card-header').innerText = 'Waiting for other player to answer';
+    document.querySelector('.card-header').innerText = 'Waiting for other players to answer.';
 }
 
 function play(obj){
     if(obj.action == 'startGame'){
-        alert('starting the game');
+        alert('Starting the game');
         document.querySelector('.card-header').innerHTML = obj.question;
         let form = document.createElement('form');
         let input = document.createElement('input');
