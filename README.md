@@ -2,8 +2,8 @@
 ## Description
 Guess the Opinion is a multiplayer game inspired by Family Feud. The objective of the game is simply to guess the most popular opinion, with more points being awarded for the more popular opinion.
 ## User story
-AS A person who maintains social distancing
-I WANT to play a group game
+AS A person who maintains social distancing<br>
+I WANT to play a group game<br>
 SO THAT I can feel connected to my friends during a pandemic
 ## Acceptance criteria
 ## Usage
