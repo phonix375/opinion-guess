@@ -70,7 +70,7 @@ outline:none;
   color: #00a8ff;
   font-size: 1rem;
   background-color:black;
-  text-shadow: 1px 8px 16px #00c3ff91
+  text-shadow: 1px 8px 16px #00c3ff91;
   box-shadow: 5px;
 }
 
@@ -111,7 +111,6 @@ html, body {
 
 #instructions {
   font-family:monospace;
-  text-size:0.5rem;
   color: aliceblue;
   
 }
@@ -164,12 +163,4 @@ html, body {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }
