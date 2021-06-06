@@ -26,7 +26,7 @@ async function submitLoginForm(event){
     if(response.ok){
         document.location.reload()
     }else{
-        alert('Somthing went wrong, Please try again');
+        alert('Something went wrong, please try again.');
     }
 }
 async function submitregisterForm(event){
@@ -36,7 +36,7 @@ async function submitregisterForm(event){
     const password = document.querySelector('#registerPassword').value.trim();
     const username = document.querySelector('#registerUsername').value.trim();
     if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))){
-        alert('please enter a valid Email address');
+        alert('Please enter a valid Email address');
         return;
     }
     if(!password){
@@ -44,7 +44,7 @@ async function submitregisterForm(event){
         return;
     }
     if(!username){
-        alert('please enter a username');
+        alert('Please enter a username');
         return;
     }
 

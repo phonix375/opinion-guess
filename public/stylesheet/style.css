@@ -65,6 +65,22 @@ outline:none;
   cursor: pointer;
 }
 
+.submit-btn {
+  font-family: NEON;
+  color: #00a8ff;
+  font-size: 1rem;
+  background-color:black;
+  text-shadow: 1px 8px 16px #00c3ff91
+  box-shadow: 5px;
+}
+
+.submit-btn:hover {
+  font-family: NEON;
+  color: #00a8ff;
+  font-size: 2rem;
+  text-shadow: 1px 8px 16px #00c3ff91
+}
+
 .form-title{
   font-family: NEON;
   color: #c3e5f0;
@@ -85,4 +101,29 @@ html, body {
 .fill { 
   min-height: 100%;
   height: 100%;
+}
+
+#game-title {
+  font-family: NEON;
+  color: #c3e5f0;
+  text-shadow: 0px 0px 20px #00c3ff91;
+}
+
+#instructions {
+  font-family:monospace;
+  text-size:0.5rem;
+  color: aliceblue;
+  
+}
+
+#questions {
+  background-color:#c3e5f0;
+}
+
+.game-layout {
+  text-align: center;
+  margin-left: auto;
+    margin-right: auto;
+    width: 50em
+  
 }
