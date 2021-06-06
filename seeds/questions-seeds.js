@@ -48,7 +48,7 @@ const questionsData = [
   },
   {
     question: "What's your one word reaction to the words 'polar vortex'?",
-    answers: ["F**k/Other Expletives", "Brrr", "Cold", "Ugh", "Chicago", "No", "Freezing"],
+    answers: ["Fuck/Other Expletives", "Brrr", "Cold", "Ugh", "Chicago", "No", "Freezing"],
     points: "[35, 20, 11, 11, 9, 7, 7]"
   },
   {

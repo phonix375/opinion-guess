@@ -32,37 +32,6 @@ function play(obj){
     document.querySelector('.card-header').innerText = obj.question;
     }
     if(obj.action ==  'endGame'){
-    //     <div class="col-lg-10">
-    //   <h2>HighScores</h2>
-    
-    //   <div class=" col-sm-10">
-    //     <table class="table table-dark table-striped">
-    //         <thead>
-    //           <tr>
-    //             <th scope="col">Order</th>
-    //             <th scope="col">Nickname</th>
-    //             <th scope="col">Highscore</th>
-    //           </tr>
-    //         </thead>
-    //         <tbody>
-    //           <tr>
-    //             <th scope="row">1</th>
-    //           </tr>
-    //           <tr>
-    //             <th scope="row">2</th>
-    //           </tr>
-    //           <tr>
-    //               <th scope="row">3</th>
-    //               <td colspan="2"></td>
-    //           </tr>
-    //           </tbody>
-    //     </table>        
-    //   </div>
-    //     <button class="submit-btn" onclick="init()">Go Back</button>
-    //     <button class="submit-btn" onclick="clearScore()">Clear All Highscores</button>
-    
-    // </div>
-
 
         document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
@@ -87,12 +56,9 @@ function play(obj){
         th3.innerText = 'Highscore';
         let tbody = document.createElement('tbody');
 
-        
         tr.appendChild(th2);
         tr.appendChild(th3);
         thead.appendChild(tr);
-
-
 
         for (const [key, value] of Object.entries(obj.score)) {
             let table_row = document.createElement('tr');
