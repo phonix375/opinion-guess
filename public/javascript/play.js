@@ -32,37 +32,6 @@ function play(obj){
     document.querySelector('.card-header').innerText = obj.question;
     }
     if(obj.action ==  'endGame'){
-    //     <div class="col-lg-10">
-    //   <h2>HighScores</h2>
-    
-    //   <div class=" col-sm-10">
-    //     <table class="table table-dark table-striped">
-    //         <thead>
-    //           <tr>
-    //             <th scope="col">Order</th>
-    //             <th scope="col">Nickname</th>
-    //             <th scope="col">Highscore</th>
-    //           </tr>
-    //         </thead>
-    //         <tbody>
-    //           <tr>
-    //             <th scope="row">1</th>
-    //           </tr>
-    //           <tr>
-    //             <th scope="row">2</th>
-    //           </tr>
-    //           <tr>
-    //               <th scope="row">3</th>
-    //               <td colspan="2"></td>
-    //           </tr>
-    //           </tbody>
-    //     </table>        
-    //   </div>
-    //     <button class="submit-btn" onclick="init()">Go Back</button>
-    //     <button class="submit-btn" onclick="clearScore()">Clear All Highscores</button>
-    
-    // </div>
-
 
         document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
@@ -146,4 +115,18 @@ document.querySelector('#addNickName').addEventListener('click', function(event)
  
 })
 
-var myModal = new bootstrap.Modal(document.getElementById("nickName"), {});
+// Modal for HighScores
+var myModal = new bootstrap.Modal(document.getElementById("HighScores"), {});
+var modal = document.getElementById("myModal");
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
