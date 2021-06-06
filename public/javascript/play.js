@@ -20,16 +20,6 @@ function play(obj){
     if(obj.action == 'startGame'){
 
         document.querySelector('.card-header').innerHTML = obj.question;
-        // let form = document.createElement('form');
-        // let input = document.createElement('input');
-        // input.classList.add("myAnswer")
-        // let btn = document.createElement('button');
-        // btn.innerText = "Submit";
-        // btn.classList.add("answerSubmit")
-        // form.appendChild(input)
-        // form.appendChild(btn)
-        // document.querySelector('.card-body').innerHTML = '';
-        // document.querySelector('.card-body').appendChild(form);
         document.querySelector('#answerSubmit').addEventListener('click',function(event){
             event.preventDefault()
             submitAnswer();
@@ -42,16 +32,89 @@ function play(obj){
     document.querySelector('.card-header').innerText = obj.question;
     }
     if(obj.action ==  'endGame'){
+    //     <div class="col-lg-10">
+    //   <h2>HighScores</h2>
+    
+    //   <div class=" col-sm-10">
+    //     <table class="table table-dark table-striped">
+    //         <thead>
+    //           <tr>
+    //             <th scope="col">Order</th>
+    //             <th scope="col">Nickname</th>
+    //             <th scope="col">Highscore</th>
+    //           </tr>
+    //         </thead>
+    //         <tbody>
+    //           <tr>
+    //             <th scope="row">1</th>
+    //           </tr>
+    //           <tr>
+    //             <th scope="row">2</th>
+    //           </tr>
+    //           <tr>
+    //               <th scope="row">3</th>
+    //               <td colspan="2"></td>
+    //           </tr>
+    //           </tbody>
+    //     </table>        
+    //   </div>
+    //     <button class="submit-btn" onclick="init()">Go Back</button>
+    //     <button class="submit-btn" onclick="clearScore()">Clear All Highscores</button>
+    
+    // </div>
+
+
         document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
-        console.log(obj.score);
-        let list = document.createElement('ul');
+        let main_div = document.createElement('div');
+        main_div.classList = 'col-lg-10';
+        let h2 = document.createElement('h2');
+        h2.innerText = 'HighScores';
+
+
+        let sec_div = document.createElement('div');
+        sec_div.classList = 'col-sm-10';
+        let table = document.createElement('table');
+        table.classList = 'table table-dark table-striped';
+        let thead = document.createElement('thead');
+        let tr = document.createElement('tr');
+        let th1 = document.createElement('th')
+        let th2 = document.createElement('th')
+        th2.classList = 'col';
+        th2.innerText = 'Nickname';
+        let th3 = document.createElement('th')
+        th3.classList = 'col';
+        th3.innerText = 'Highscore';
+        let tbody = document.createElement('tbody');
+
+        
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+        thead.appendChild(tr);
+
+
+
         for (const [key, value] of Object.entries(obj.score)) {
-            let listItem = document.createElement('li');
-            listItem.innerText = key + " : " + value.score;
-            list.appendChild(listItem);
+            let table_row = document.createElement('tr');
+            let table_td1 = document.createElement('td');
+            let table_td2 = document.createElement('td');
+            table_td1.innerText = key;
+            table_td2.innerText = value.score;
+            table_row.appendChild(table_td1);
+            table_row.appendChild(table_td2);
+            tbody.appendChild(table_row);
           }
-          document.querySelector('.card-body').appendChild(list);
+
+        main_div.appendChild(h2);
+        let card_body = document.querySelector('.card-body');
+        card_body.appendChild(main_div);
+
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        sec_div.appendChild(table);
+        card_body.appendChild(sec_div);
+
 
     }
 }
