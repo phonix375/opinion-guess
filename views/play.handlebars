@@ -1,12 +1,10 @@
+<!-- Game Layout -->
 <div class="container-Fluid">
   <div class="col-12 d-flex justify-content-center">
     <div class="card">
-  <div class="card-body">
-       Welcome to game number - {{game}}
+  <div class="card-body text-center">
+       Welcome to Game #{{game}}
   </div>
-</div>
-  </div>
-
 </div>
 
 
@@ -16,7 +14,8 @@
     <div class="modal-content">
       <div class="modal-body rounded">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                
+
+   <!-- Form to prompt a new nickname -->             
 <form id="nickNameForm">
   <div>
   <h3 class="form-title">Join a Game</h3>
@@ -32,30 +31,30 @@
   </div>
 </div>
 
-<!-- Game Layout -->
+<!-- Console for game to begin -->
 <div class="game-layout">
-  <div>
-    <h1 id="game-title">Welcome to "Guess The Opinion!</h1>
+  <div><br>
+    <h1 id="game-title">Welcome to Guess The Opinion!</h1>
   </div><br>
 
   <div id="instructions"
-    <h2>For every question, give your best guess on the most popular answer!</h2>
+    <h2>For every question, give your best guess as to the most popular answer!</h2>
   </div><br>
 
   <!-- Question Display --->
   <div class="card" id="questions">
-      <h5 class="card-header">Waiting for other players to join</h5>
+      <h5 class="card-header">Waiting for other players to join ...</h5>
   </div>
   
   <div>
     <form class="col-14"> 
-      <input type="text" class="form-control" id="myAnswer">
+      <input type="text" class="form-control" id="myAnswer" placeholder="Start typing here ...">
     </form><br>
     <button id="answerSubmit" class="submit-btn">Guess!</button>
   </div>
 </div>
-<!-- JS -->
 
+<!-- Function for multiple players to join game-->
 <script src="/javascript/play.js"></script>
 <script>
     var socket = io();
