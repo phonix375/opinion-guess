@@ -68,8 +68,8 @@ outline:none;
 .submit-btn {
   font-family: NEON;
   color: #00a8ff;
-  font-size: 2rem;
-  background-color: black;
+  font-size: 1rem;
+  background-color:black;
   text-shadow: 1px 8px 16px #00c3ff91
   box-shadow: 5px;
 }
@@ -110,21 +110,20 @@ html, body {
 }
 
 #instructions {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:monospace;
   text-size:0.5rem;
-  text-shadow: 0px 0px 20px;
-  background-color:#c3e5f0;
+  color: aliceblue;
+  
 }
 
 #questions {
-  background-color: black;
-  color:white;
+  background-color:#c3e5f0;
 }
 
 .game-layout {
   text-align: center;
   margin-left: auto;
     margin-right: auto;
-    width: 65em
+    width: 50em
   
 }
