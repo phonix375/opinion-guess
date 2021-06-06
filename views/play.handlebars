@@ -2,7 +2,7 @@
   <div class="col-12 d-flex justify-content-center">
     <div class="card">
   <div class="card-body">
-       Welcome to game number - {{game}}
+       Welcome to Game #{{game}}
   </div>
 </div>
   </div>
@@ -34,22 +34,22 @@
 
 <!-- Game Layout -->
 <div class="game-layout">
-  <div>
-    <h1 id="game-title">Welcome to "Guess The Opinion!</h1>
+  <div><br>
+    <h1 id="game-title">Welcome to Guess The Opinion!</h1>
   </div><br>
 
   <div id="instructions"
-    <h2>For every question, give your best guess on the most popular answer!</h2>
+    <h2>For every question, give your best guess as to the most popular answer!</h2>
   </div><br>
 
   <!-- Question Display --->
   <div class="card" id="questions">
-      <h5 class="card-header">Waiting for other players to join</h5>
+      <h5 class="card-header">Waiting for other players to join ...</h5>
   </div>
   
   <div>
     <form class="col-14"> 
-      <input type="text" class="form-control" id="myAnswer">
+      <input type="text" class="form-control" id="myAnswer" placeholder="Start typing here ...">
     </form><br>
     <button id="answerSubmit" class="submit-btn">Guess!</button>
   </div>
