@@ -9,12 +9,12 @@ SO THAT I can feel connected to my friends during a pandemic
 ## Usage
 On the homepage, sign up to create a new account, or login if you already have. Once you're logged in, you can either start a game and wait for players to join. To join a game, you don't need an account, you just need to scan your QR code. Once the game has started, type an answer to each of the questions and wait for all players to answer. At the end of the game, highscores will be displayed for all the players.
 ## Technologies Used
-HTML
-CSS
-Javascript
-Bootstrap
-Handlebars.js
-Socket.io
+HTML<br>
+CSS<br>
+Javascript<br>
+Bootstrap<br>
+Handlebars.js<br>
+Socket.io<br>
 Sequelize ORM
 ## Future developments
 ## Screenshot
