@@ -5,4 +5,4 @@ const Game = require('./game');
 
 
 
-module.exports = { User, Question };
+module.exports = { User, Question, Game };

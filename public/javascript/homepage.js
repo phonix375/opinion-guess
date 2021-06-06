@@ -1,7 +1,7 @@
-function joinGameHandler(event){
-    alert('you clicked the join a game');
-} 
-
+function joingame(event){
+    let gameNumber = document.querySelector('#gameNumber').value;
+    window.location.href = '/game/play/' + gameNumber;
+}
 
 function PlayPressHandeler(event){
     const players = document.querySelector('#players').value.trim();
@@ -20,6 +20,6 @@ function PlayPressHandeler(event){
 }
 
 const socket = io();
-document.querySelector('#joinGame').addEventListener('click', joinGameHandler);
 document.querySelector('#play-btn').addEventListener('click', PlayPressHandeler);
+document.querySelector('#join-btn').addEventListener('click', joingame);
 
