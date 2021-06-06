@@ -41,7 +41,7 @@ function play(obj){
     document.querySelector('.card-header').innerText = obj.question;
     }
     if(obj.action ==  'endGame'){
-        document.querySelector('.card-header').innerText = 'The Game is over';
+        document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
         console.log(obj.score);
         let list = document.createElement('ul');

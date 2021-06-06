@@ -1,9 +1,9 @@
 <div class="container-Fluid">
   <div class="col-12 d-flex justify-content-center">
     <div class="card">
-  <h5 class="card-header">Waiting for other player to join</h5>
+  <h5 class="card-header">Waiting for other players to join</h5>
   <div class="card-body">
-       Welcome to game number {{game}}
+       Welcome to game number - {{game}}
   </div>
 </div>
   </div>
@@ -33,27 +33,29 @@
   </div>
 </div>
 
-<!--- Game layout --->
-<div class="card">
-  <h1>Welcome to "Guess The Opinion!</h1>
-</div>
-<div class="card">
-  <h2>For every question, give your best guess on the most popular answer!</h2>
-</div>
-<!-- Question Display --->
-<div class="col-6 d-flex justify-content-center">
-  <div class="card">
+<!-- Game Layout -->
+<div class="game-layout">
+  <div>
+    <h1 class="col-16" id="game-title">Welcome to "Guess The Opinion!</h1>
+  </div><br>
 
-</div>
+  <div class="col-16" id="instructions"
+    <h2>For every question, give your best guess on the most popular answer!</h2>
+  </div><br>
 
-<!-- Submit Answer -->
-<div>
-  <form>
-    <label class="form-label">Give your best guess!</label>
-    <input type="text" class="form-control" id="answer" aria-describedby=" ">
-  </form>
-  <a id="submitAnswer" class="game-btn">Guess!</a>
+  <!-- Question Display --->
+  <div class="col-14" id="questions">
+    Questions go here!
+  </div>
+  
+  <div>
+    <form class="col-14"> 
+      <input type="text" class="form-control" id="answer">
+    </form>
+    <button id="submitAnswer" class="submit-btn">Guess!</button>
+  </div>
 </div>
+<!-- JS -->
 
 <script src="/javascript/play.js"></script>
 <script>
