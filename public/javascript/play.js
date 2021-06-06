@@ -1,9 +1,9 @@
-function joinedGame(game){
+function joinedGame(game) {
 
     myModal.show();
 }
 
-function submitAnswer(){
+function submitAnswer() {
     let answer = document.querySelector('#myAnswer').value.trim()
     console.log("Your answer is " , answer);
     let game = window.location.toString().split('/')[
@@ -16,22 +16,22 @@ function submitAnswer(){
     document.querySelector('.card-header').innerText = 'Waiting for other players to answer.';
 }
 
-function play(obj){
-    if(obj.action == 'startGame'){
+function play(obj) {
+    if(obj.action == 'startGame') {
 
         document.querySelector('.card-header').innerHTML = obj.question;
-        document.querySelector('#answerSubmit').addEventListener('click',function(event){
+        document.querySelector('#answerSubmit').addEventListener('click',function(event) {
             event.preventDefault()
             submitAnswer();
         })
     }
-    if(obj.action == 'nextQuestion'){
+    if(obj.action == 'nextQuestion') {
         document.querySelector('#myAnswer').disabled = false;
         document.querySelector('#myAnswer').value = '';
     document.querySelector('#answerSubmit').disabled = false;
     document.querySelector('.card-header').innerText = obj.question;
     }
-    if(obj.action ==  'endGame'){
+    if(obj.action ==  'endGame') {
 
         document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
@@ -85,7 +85,7 @@ function play(obj){
     }
 }
 
-function saveNickName(){
+function saveNickName() {
     let nick = document.querySelector('#nick').value ;
     
     if(nick == ''){
@@ -106,7 +106,7 @@ function saveNickName(){
 }
 
 
-document.querySelector('#addNickName').addEventListener('click', function(event){
+document.querySelector('#addNickName').addEventListener('click', function(event) {
     saveNickName()
     myModal.hide()
  
