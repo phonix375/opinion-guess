@@ -21,7 +21,7 @@ Sequelize ORM
 ![screenshot](./public/images/screenshot.jpeg)
 ## Deployed Application
 ## Contributors
-Alexy Kotilar
-Samia Ferdous
-Kyle Barrer
+Alexy Kotilar/
+Samia Ferdous/
+Kyle Barrer/
 Peter Wang
