@@ -125,9 +125,3 @@ html, body {
     margin-right: auto;
     width: 50em
 }
-
-.margin-example {
-  width: 200px;
-  background-color: #ddd;
-  margin: 0 auto;
-}

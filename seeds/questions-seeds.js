@@ -32,12 +32,12 @@ const questionsData = [
     scores: '[27, 20, 17, 8, 7, 7, 7, 7]'
   },
   {
-    question: 'What"s your one word reaction to the words "polar vortex"?',
+    question: 'What is your one word reaction to the words "polar vortex"?',
     answers: '["Fuck/Other Expletives", "Brrr", "Cold", "Ugh", "Chicago", "No", "Freezing"]',
     scores: '[35, 20, 11, 11, 9, 7, 7]'
   },
   {
-    question: 'What"s the first app you use when you wake up?',
+    question: 'What is the first app you use when you wake up?',
     answers: '["Email", "Weather", "News/Magazine/ESPN", "Instagram", "Facebook", "Reddit", "Alarm"]',
     scores: '[28, 19, 17, 13, 13, 6, 4]'
   },
@@ -47,12 +47,12 @@ const questionsData = [
     scores: '[28, 26, 17, 10, 10, 9]'
   },
   {
-    question: 'What"s the worst thing to realize that you left home without?',
+    question: 'What is the worst thing to realize that you left home without?',
     answers: '["Phone","Keys","Wallet", "Pants", "Computer", "CTA/Transit Pass", "Headphones", "Deodorant"]',
     scores: '[42, 14, 12, 8, 8, 6, 5, 5]'
   },
   {	
-    question: 'What"s your favorite playground equipment?',
+    question: 'What is your favorite playground equipment?',
     answers: '["Swing", "Monkey Bars", "Slide", "Merry-go-round", "A Ball"]',
     scores: '[56, 17, 16, 5, 5]'
   }
