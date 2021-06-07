@@ -16,7 +16,7 @@ function submitAnswer(){
     document.querySelector('.card-header').innerText = 'Waiting for other players to answer.';
 }
 
-function play(obj){
+  function play(obj){
     if(obj.action == 'startGame'){
 
         document.querySelector('.card-header').innerHTML = obj.question;
@@ -38,7 +38,7 @@ function play(obj){
         let main_div = document.createElement('div');
         main_div.classList = 'col-lg-10';
         let h2 = document.createElement('h2');
-        h2.innerText = 'HighScores';
+        h2.innerText = 'Here is your highscore!';
 
 
         let sec_div = document.createElement('div');
@@ -80,9 +80,8 @@ function play(obj){
         table.appendChild(tbody);
         sec_div.appendChild(table);
         card_body.appendChild(sec_div);
-
-
     }
+
 }
 
 function saveNickName(){
@@ -111,27 +110,5 @@ document.querySelector('#addNickName').addEventListener('click', function(event)
     myModal.hide()
  
 })
-
-// // Modal for HighScores
-// var myModal2 = new bootstrap.Modal(document.getElementById("HighScores"), {});
-// var modal = document.getElementById("myModal");
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-//   }
 
 var myModal = new bootstrap.Modal(document.getElementById("nickName"), {});
