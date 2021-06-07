@@ -48,7 +48,12 @@ Sequelize ORM
 
 ## Screenshot
 ![screenshot](./public/images/screenshot.jpeg)
+![Opinion Guess](https://user-images.githubusercontent.com/77371739/120945068-ac098100-c705-11eb-9da6-4b7d9aae0293.gif)
+
 ## Deployed Application
+GitHub Repository: https://github.com/phonix375/opinion-guess
+Deployed Heroku Link: https://glacial-hamlet-81144.herokuapp.com/
+
 ## Contributors
 Alexy Kotilar<br>
 Samia Ferdous<br>

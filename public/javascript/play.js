@@ -16,13 +16,8 @@ function submitAnswer() {
     document.querySelector('.card-header').innerText = 'Waiting for other players to answer.';
 }
 
-<<<<<<< HEAD
   function play(obj){
     if(obj.action == 'startGame'){
-=======
-function play(obj) {
-    if(obj.action == 'startGame') {
->>>>>>> 083792c4c9ce1b8a26430851a46bec1fb139eeda
 
         document.querySelector('.card-header').innerHTML = obj.question;
         document.querySelector('#answerSubmit').addEventListener('click',function(event) {
