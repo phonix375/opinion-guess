@@ -13,7 +13,7 @@ router.get('/:number', (req,res) =>{
     let uuid = d.getTime();
     username = req.session.username
     
-    res.render('server',  {loggedIn: req.session.loggedIn, username:username ,uuid: uuid, players:req.params.number, ip:process.env.IP,url:`https://glacial-hamlet-81144.herokuapp.com//game/play/${uuid}` } )
+    res.render('server',  {loggedIn: req.session.loggedIn, username:username ,uuid: uuid, players:req.params.number, ip:process.env.IP,url:`https://glacial-hamlet-81144.herokuapp.com/game/play/${uuid}` } )
 })
 
 router.get('/play/:number', (req,res) =>{
