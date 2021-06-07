@@ -2,12 +2,12 @@
 ## Description
 Guess the Opinion is a multiplayer game inspired by Family Feud. The objective of the game is simply to guess the most popular opinion, with more points being awarded for the more popular opinion.
 
-## User story
+## User Story
 AS A person who maintains social distancing<br>
 I WANT to play a group game<br>
 SO THAT I can feel connected to my friends during a pandemic
 
-## Acceptance criteria
+## Acceptance Criteria
 WHEN I visit the site <br>
 THEN I have an option to join a game, log in or register<br>
 WHEN I click on Register<br>
@@ -41,7 +41,7 @@ Handlebars.js<br>
 Socket.io<br>
 Sequelize ORM
 
-## Future developments
+## Future Developments
 1) Adding more games onto the platform - such as board games, word games and trivia
 2) Exclusive game features such as avatars and tokens
 3) Adding a chat feature to connect directly while playing
@@ -54,8 +54,9 @@ Sequelize ORM
 
 
 ## Deployed Application
-GitHub Repository: https://github.com/phonix375/opinion-guess <br>
 Deployed Heroku Link: https://glacial-hamlet-81144.herokuapp.com/ <br>
+GitHub Repository: https://github.com/phonix375/opinion-guess <br>
+
 
 ## Contributors
 Alexy Kotilar<br>
