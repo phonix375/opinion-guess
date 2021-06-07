@@ -1,9 +1,9 @@
-function joinedGame(game){
+function joinedGame(game) {
 
     myModal.show();
 }
 
-function submitAnswer(){
+function submitAnswer() {
     let answer = document.querySelector('#myAnswer').value.trim()
     console.log("Your answer is " , answer);
     let game = window.location.toString().split('/')[
@@ -16,29 +16,29 @@ function submitAnswer(){
     document.querySelector('.card-header').innerText = 'Waiting for other players to answer.';
 }
 
-function play(obj){
+  function play(obj){
     if(obj.action == 'startGame'){
 
         document.querySelector('.card-header').innerHTML = obj.question;
-        document.querySelector('#answerSubmit').addEventListener('click',function(event){
+        document.querySelector('#answerSubmit').addEventListener('click',function(event) {
             event.preventDefault()
             submitAnswer();
         })
     }
-    if(obj.action == 'nextQuestion'){
+    if(obj.action == 'nextQuestion') {
         document.querySelector('#myAnswer').disabled = false;
         document.querySelector('#myAnswer').value = '';
     document.querySelector('#answerSubmit').disabled = false;
     document.querySelector('.card-header').innerText = obj.question;
     }
-    if(obj.action ==  'endGame'){
+    if(obj.action ==  'endGame') {
 
         document.querySelector('.card-header').innerText = 'The Game is over.';
         document.querySelector('.card-body').innerHTML = '';
         let main_div = document.createElement('div');
         main_div.classList = 'col-lg-10';
         let h2 = document.createElement('h2');
-        h2.innerText = 'HighScores';
+        h2.innerText = 'Here is your highscore!';
 
 
         let sec_div = document.createElement('div');
@@ -80,12 +80,11 @@ function play(obj){
         table.appendChild(tbody);
         sec_div.appendChild(table);
         card_body.appendChild(sec_div);
-
-
     }
+
 }
 
-function saveNickName(){
+function saveNickName() {
     let nick = document.querySelector('#nick').value ;
     
     if(nick == ''){
@@ -106,32 +105,10 @@ function saveNickName(){
 }
 
 
-document.querySelector('#addNickName').addEventListener('click', function(event){
+document.querySelector('#addNickName').addEventListener('click', function(event) {
     saveNickName()
     myModal.hide()
  
 })
-
-// // Modal for HighScores
-// var myModal2 = new bootstrap.Modal(document.getElementById("HighScores"), {});
-// var modal = document.getElementById("myModal");
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-//   }
 
 var myModal = new bootstrap.Modal(document.getElementById("nickName"), {});

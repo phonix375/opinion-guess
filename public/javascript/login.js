@@ -1,11 +1,11 @@
-async function submitLoginForm(event){
+async function submitLoginForm(event) {
     event.preventDefault();
     console.log('click');
 
     const email = document.querySelector('#email').value.trim();
     
     const password = document.querySelector('#password').value.trim();
-    if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))){
+    if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))) {
         alert('please enter a valid Email address');
         return;
     }
@@ -23,13 +23,13 @@ async function submitLoginForm(event){
         headers:{ 'Content-Type': 'application/json' }
     });
 
-    if(response.ok){
+    if(response.ok) {
         document.location.reload()
     }else{
         alert('Something went wrong, please try again.');
     }
 }
-async function submitregisterForm(event){
+async function submitregisterForm(event) {
     event.preventDefault();
 
     const email = document.querySelector('#registerEmail').value.trim();
@@ -39,11 +39,11 @@ async function submitregisterForm(event){
         alert('Please enter a valid Email address');
         return;
     }
-    if(!password){
+    if(!password) {
         alert('Please enter a password');
         return;
     }
-    if(!username){
+    if(!username) {
         alert('Please enter a username');
         return;
     }
@@ -55,10 +55,10 @@ async function submitregisterForm(event){
             password,
             username
         }),
-        headers:{ 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' }
     });
 
-    if(response.ok){
+    if(response.ok) {
         document.location.reload()
     }else{
         alert(response.statusText);

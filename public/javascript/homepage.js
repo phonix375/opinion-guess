@@ -1,9 +1,9 @@
-function joingame(event){
+function joingame(event) {
     let gameNumber = document.querySelector('#gameNumber').value;
     window.location.href = '/game/play/' + gameNumber;
 }
 
-function PlayPressHandeler(event){
+function PlayPressHandeler(event) {
     const players = document.querySelector('#players').value.trim();
     console.log(typeof players)
     console.log(players)

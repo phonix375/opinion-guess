@@ -2,11 +2,6 @@ const { Question } = require("../models/");
 
 const questionsData = [
   {
-    question:  'If Sape Chicago had one more floor, what would you put there?',
-    answers: '["Games", "Sports or fitness equipment", "More meeting rooms", "Sleeping space", "Lounge", "Privacy", "Bar", "Playground"]',
-    scores: '[21, 17, 16, 16, 8, 8, 7, 7]'
-  },
-  {
     question:  'Where do you want the next office holiday party to be?',
     answers: '["Hotel/hotel bar", "Somewhere with a view", "Somewhere warm", "On a boat", "Museum or park space", "Somewhere cheap", "Brewery", "Somewhere in Europe"]',
     scores: '[19, 19, 17, 15, 10, 8, 6, 6]'
@@ -22,14 +17,9 @@ const questionsData = [
     scores: '[22, 15, 15, 12, 12, 8, 8, 8]'
   },
   {
-    question:   'What’s your favorite board game?',
+    question:  'What’s your favorite board game?',
     answers: '["Monopoly", "Scrabble", "Risk", "Clue", "Trivial Pursuit", "Settlers of Catan", "Cards Against Humanity", "Scattergories"]',
-    scores: "[26, 20, 15, 13, 7, 7, 7, 5]"
-  },
-  {
-    question: 'What Sapient office would you most like to visit?',
-    answers: '["London", "LA/Santa Monica", "Miami", "Sydney", "Bangalore", "NYC", "Singapore"]',
-    scores: '[24, 17, 17, 16, 10, 8, 8]'
+    scores: '[26, 20, 15, 13, 7, 7, 7, 5]'
   },
   {
     question: 'What snack do you always keep at your desk?',
@@ -42,33 +32,28 @@ const questionsData = [
     scores: '[27, 20, 17, 8, 7, 7, 7, 7]'
   },
   {
-    question: 'What is the best neighborhood in Chicago?',
-    answers: '["Wicker Park", "Logan Square", "Lincoln Park", "River North", "Old Town", "Lakeview", "West Loop", "Andersonville"]',
-    scores: '[21, 19, 17, 15, 15, 13]'
-  },
-  {
-    question: 'What"s your one word reaction to the words "polar vortex"?',
+    question: 'What is your one word reaction to the words "polar vortex"?',
     answers: '["Fuck/Other Expletives", "Brrr", "Cold", "Ugh", "Chicago", "No", "Freezing"]',
     scores: '[35, 20, 11, 11, 9, 7, 7]'
   },
   {
-    question: 'What"s the first app you use when you wake up?',
+    question: 'What is the first app you use when you wake up?',
     answers: '["Email", "Weather", "News/Magazine/ESPN", "Instagram", "Facebook", "Reddit", "Alarm"]',
-    scores: "[28, 19, 17, 13, 13, 6, 4]"
+    scores: '[28, 19, 17, 13, 13, 6, 4]'
   },
   {
-    question: 'Name the chore that you dread the most',
+    question: 'Name the chore that you dread the most?',
     answers: '["Laundry", "Dishes", "Cleaning Bathroom", "Taking out the Trash", "Work Duties", "Cleauygtning Baby/Cat Poop"]',
     scores: '[28, 26, 17, 10, 10, 9]'
   },
   {
-    question: 'What"s the worst thing to realize that you left home without?',
+    question: 'What is the worst thing to realize that you left home without?',
     answers: '["Phone","Keys","Wallet", "Pants", "Computer", "CTA/Transit Pass", "Headphones", "Deodorant"]',
     scores: '[42, 14, 12, 8, 8, 6, 5, 5]'
   },
   {	
-    question: 'What"s your favorite playground equipment?',
-    answers: '[Swing", "Monkey Bars", "Slide", "Merry-go-round", "A Ball]',
+    question: 'What is your favorite playground equipment?',
+    answers: '["Swing", "Monkey Bars", "Slide", "Merry-go-round", "A Ball"]',
     scores: '[56, 17, 16, 5, 5]'
   }
 ];
