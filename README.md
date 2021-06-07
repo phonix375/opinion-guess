@@ -48,6 +48,8 @@ Sequelize ORM
 
 ## Screenshot
 ![screenshot](./public/images/screenshot.jpeg) <br>
+
+## Demo
 ![Opinion Guess](https://user-images.githubusercontent.com/77371739/120946117-5c2cb900-c709-11eb-91a6-3206424b0df3.gif) <br>
 
 
